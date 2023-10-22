@@ -1,10 +1,10 @@
 ﻿body {
+    height: 520;
+    width: 1024;
 	margin: 0;
 	padding: 0;
-}
-
-canvas, .wrapper{
-	margin:0 10% 0 10%;
+    font-family: sans-serif;
+    background: #333;
 }
 
 .instructions {
@@ -24,13 +24,9 @@ canvas, .wrapper{
 }
 
 #game-over, #game-over-overlay {
-    margin:0 10% 0 10%;
     width: 1024px;
     height: 520px;
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1em;
     z-index: 1;
     display: none;
 }
@@ -57,4 +53,41 @@ canvas, .wrapper{
 
 .red { 
 	color: red;
+}
+
+@keyframes rotation { 0% { rotate: -5deg; } 100% { rotate: 5deg; } }
+#draggable-cards > * {
+    padding: 1em 1em 2em 1em;
+    margin: -1em 0 0 .5em;
+    rotate: 10deg;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: white;
+    animation: rotation 4s linear -2s infinite alternate;
+    text-align: center;
+}
+
+/* Added styles for the draggable cards */
+#draggable-cards {
+  position: absolute;
+  display: flex;
+  width: 750px;
+  top: 520px;
+  left: 0;
+  /* Add additional styles as needed */
+}
+
+#trade {
+    position: absolute;
+    top: 520px;
+    left: 1024;
+    transform: translateX(-100%);
+}
+#trade * {
+    display: inline;
+    font-size: 30px;
+    font-weight: bold;
+}
+#coins {
+    color: white;
 }
